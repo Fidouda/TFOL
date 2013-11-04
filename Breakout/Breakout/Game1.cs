@@ -322,6 +322,7 @@ namespace Breakout
 
         private void UpdateLoading(GameTime gameTime)
         {
+            MediaPlayer.Stop();
             if (soundEngineInstance == null || soundEngineInstance.State == SoundState.Stopped)
             {
                 soundEngineInstance = countdown.CreateInstance();
@@ -364,7 +365,6 @@ namespace Breakout
 
             if (kState.IsKeyDown(Keys.Enter))
             {
-                MediaPlayer.Stop();
                 gameState = GameState.Loading;
             }
 
